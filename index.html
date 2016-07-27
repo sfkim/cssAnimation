@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#sample-rec {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example, moveRight;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+#sample-rec2 {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    animation-name: example, moveRight;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: 3;
+}
+#sample-rec3 {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    animation-name: example, moveRight;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0,1.43,.83,-0.35);
+}
+#sample-rec4 {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+@keyframes moveRight {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(150px, 0);
+    }
+}
+
+/* Standard syntax */
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+</style>
+</head>
+<body>
+
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+
+<div id="sample-rec"></div>
+<div id="sample-rec2"></div>
+<div id="sample-rec3"></div>
+<div id="sample-rec4"></div>
+<p><b>Note:</b> When an animation is finished, it changes back toyits original style.</p>
+
+</body>
+
+<script>
+  var sampleRec = document.querySelector("#sample-rec4");
+  
+  sampleRec.animate([
+    {transform: "translate(0,0)"},
+    {trenaform: "translate(450px, 0)"}
+  ],
+    {
+    duration: 2000,
+    fill: "forwards",
+    easing: "linear",
+    delay: 1000,
+    iterations: Infinity
+  });
+</script>
+</html>
